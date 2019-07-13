@@ -1,4 +1,4 @@
-  var URL = "http://127.0.0.1"
+var URL = "http://127.0.0.1"
 
   var voteMap = {};
 
@@ -6,6 +6,8 @@
   var downvoteSrc = "downvote.png";
   var activeUpvoteSrc = "upvote_clicked.png";
   var activeDownvoteSrc = "downvote_clicked.png";
+  var postMiceSrc = "Mascot_";
+  var numPostMice = 4;
 
   function toggle_comments(box_id) {
     var x = document.getElementById("comments-" + box_id);
@@ -164,6 +166,7 @@
                         <span class="linkbox_link">` + url + `</span>
                     </a>
                 </div>
+                <img class="linkbox_picture" id="linkbox_picture-`+id+`" src="`+postMiceSrc+(id % numPostMice)`.png">
                 <div class="linkbox_buttons">
                     <a class="linkbox_discuss_button" id="linkbox_discuss_button-` + id + `" onclick="openComments(` + id + ` )" href="#">Discuss (` + numComments + `)</a>
                     <!-- <a class="linkbox_sources_button">Sources</a> -->
