@@ -1,4 +1,4 @@
-  var URL = "http://192.168.1.167"
+var URL = "http://127.0.0.1"
 
   var voteMap = {};
 
@@ -6,6 +6,8 @@
   var downvoteSrc = "downvote.png";
   var activeUpvoteSrc = "upvote_clicked.png";
   var activeDownvoteSrc = "downvote_clicked.png";
+  var postMiceSrc = "Mascot_";
+  var numPostMice = 4;
 
   function toggle_comments(box_id) {
     var x = document.getElementById("comments-" + box_id);
@@ -151,11 +153,11 @@
   function loadPost(id, heading, url, upvotes, downvotes, numComments, numSources, age, votestatus) {
     document.getElementById("posts").innerHTML += `<div id='linkbox-` + id + `' class="linkbox">
             <div id='linkbox_votes-` + id + `' class="linkbox_votes">
-                <span id="upvoteLabel-` + id + `">` + upvotes + `</span>
                 <img src="` + upvoteSrc + `" onclick="upvote(` + id + `)" title="Legit" id="upvoteButton-` + id + `">
-                <span id="totalLabel-` + id + `">` + (Number(upvotes) - Number(downvotes)).toString() + `</span>
+				<span id="upvoteLabel-` + id + `">` + upvotes + `</span><br>
+                <span id="totalLabel-` + id + `">` + (Number(upvotes) - Number(downvotes)).toString() + `</span><br>
                 <img src="` + downvoteSrc + `" onclick="downvote(` + id + `)" title="Smells like bullcrap" id="downvoteButton-` + id + `">
-                  <span id="downvoteLabel-` + id + `">` + downvotes + `</span>
+                <span id="downvoteLabel-` + id + `">` + downvotes + `</span>
             </div>
             <div class="linkbox_main">
                 <div class="linkbox_titlebox">
@@ -164,8 +166,9 @@
                         <span class="linkbox_link">` + url + `</span>
                     </a>
                 </div>
+                <img class="linkbox_picture" id="linkbox_picture-`+id+`" src="`+postMiceSrc+(id % numPostMice)`.png">
                 <div class="linkbox_buttons">
-                    <a class="linkbox_discuss_button" id="linkbox_discuss_button-` + id + `" onclick="openComments(` + id + ` )" href="#">Discuss</a>
+                    <a class="linkbox_discuss_button" id="linkbox_discuss_button-` + id + `" onclick="openComments(` + id + ` )" href="#">Discuss (` + numComments + `)</a>
                     <!-- <a class="linkbox_sources_button">Sources</a> -->
                 </div>
                 <div class="linkbox_time">` + age + `</div>

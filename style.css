@@ -1,17 +1,21 @@
 html{
-    background-color: grey;
+    background-color: #d9d9d9;
     text-align: center;
+}
+body {
+	padding: 0;
+	margin: 0;
 }
 a{
     text-decoration: none;
     color: inherit;
 }
 .topbox{
-    width: 100%;
+    /*width: 100%;*/
     display: block;
     text-align: center;
-    border-bottom: ridge;
-    position: relative;
+    background-color: #cccccc;
+	padding-bottom: 5px;
 }.topbox h1{
     font-size: 32;
     color: azure;
@@ -22,18 +26,21 @@ a{
     height: 50px;
     position: absolute;
     right: 5px;
-    bottom: 5px;;
+    bottom: 5px;
 }
 
 .menu_bar{
     width: 100%;
     text-align: center;
-    background-color: firebrick;
+    background-color: #4caf50;
+	box-shadow: 0 2px 10px -2px #333;
 }.menu_bar a{
     display: inline-block;
     width: 80px;
+	padding: 10px;
+	font-family: sans-serif;
 }.menu_bar a:hover{
-    background-color: rgb(150, 50, 50);
+    background-color: #087f23;
     color: white;
     cursor: pointer;
 }
@@ -45,18 +52,29 @@ a{
 
 .linkbox{
     position: relative;
-    border: solid white;
+    border: 0;
+	box-shadow: 0px 1px 8px -2px #555;
     display: flex;
     margin-top: 20px;
-    background-color: firebrick;
+    background-color: #4caf50;
     text-align: left;
-}.linkbox_votes{
-    display: inline-block;
+	color: white;
+	padding: 6px;
+	font-family: sans-serif;
+}
+.linkbox a {
+	font-family: sans-serif;
+}
+.linkbox_votes{
+    /*display: inline-block;*/
     width: auto;
-    margin: 0 20px 0 20px;
+    margin: 0 20px 0 10px;
     text-align: center;
+}
+.linkbox_votes span {
+	vertical-align: 50%;
 }.linkbox_votes img{
-    display: block;
+    /*display: block;*/
     width: 40px;
     height: 40px;
     margin-top: 0;
@@ -69,6 +87,7 @@ a{
     display: block;
 }.linkbox_titlebox a:hover{
     text-decoration: underline;
+	font-family: sans-serif;
 }.linkbox_buttons{
     position: absolute;
     bottom: 3px;
@@ -78,12 +97,19 @@ a{
     right: 3px;
 }
 
+.linkbox_discuss_button {
+	border-radius: 6px 6px 0 0;
+	background-color: #087f23;
+	padding: 4px;
+	position: relative;
+	left: 34px;
+}
 .linkbox_discuss_button:hover, .linkbox_sources_button:hover{
     text-decoration: underline;
 }
 
 .linkbox_title{
-    font-family: "Times New Roman", Times, serif;
+    /*font-family: "Times New Roman", Times, serif;*/
     font-size: 2em;
 }.linkbox_link{
     font-family: "Lucida Console", monospace;
@@ -91,19 +117,23 @@ a{
 }
 
 .commentsbox{
-    border: solid white;
+    border: 0;
+	box-shadow: 0px 1px 8px -3px black;
     display: none;
     margin-top: 0;
     width: 80%;
     max-height: 500px;
-    background-color: firebrick;
+    background-color: #087f23;
     text-align: left;
     border-top: none;
     overflow-y: scroll;
+	padding: 10px;
+	color: white;
 }.commentsbox_header{
     text-align: center;
-    font-family: serif;
+    font-family: sans-serif;
     font-size: 1.3em;
+	color: white;
 }
 
 .comment{
@@ -130,24 +160,23 @@ a{
 .comment_entry{
     max-width: 80%;
     min-width: 80%;
-    border: none;
-    border: solid 1px grey;
+    border: solid 1px silver;
     margin-left: 5px;
-    background: none;
+    background: #80e27e;
     outline: none;
     display: inline-block;
 }.comment_post{
     display: inline-block;
-    padding: 2px;
+    padding: 10px;
     text-align: center;
-    border: solid 1px red;
+    border: 0;
     border-radius: 5px;
-    background-color: rgb(180,100,100);
+    background-color: #80e27e;
     width: 50px;
     margin: 10px;
     outline: none;
 }.comment_post:hover{
-    background-color: rgb(150,70,70);
+    background-color: #4caf50;
     cursor: pointer;
 }
 
@@ -171,27 +200,56 @@ a{
     left: 20%;
     border: white 3px solid;
     border-radius: 10px;
-    background-color: firebrick;
+    background-color: #4caf50;
     padding: 10px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }.close_postpopup_button{
     position: absolute;
     top: 5px;
     right: 5px;
     padding: 2px;
     outline: none;
+	border: 2px solid white;
+	background-color: #087f23;
+	color: white;
+	padding: 3px;
 }.close_postpopup_button:hover{
     cursor: pointer;
+}
+.post_popup h1 {
+	font-family: sans-serif;
+	color: white;
+}
+.post_popup td {
+	font-family: sans-serif;
+	color: white;
+}
+.post_popup input {
+	width: 450px;
+	border: 0;
+	outline: none;
+	padding: 3px;
 }
 .post_button{
     margin: 10px;
     padding: 15px;
     font-size: 1.2em;
     text-align: center;
-    border: solid 1px red;
     border-radius: 5px;
-    background-color: rgb(180,100,100);
     outline: none;
+	border: 2px solid white;
+	background-color: #087f23;
+	color: white;
+	padding: 10px;
 }.post_button:hover{
     background-color: rgb(150,70,70);
     cursor: pointer;
+}
+.loggedin_text {
+	position: absolute;
+	right: 15px;
+	color: white;
+	margin-top: 10px;
+	font-family: sans-serif;
 }
