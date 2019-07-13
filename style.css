@@ -71,7 +71,7 @@ a{
 }
 .linkbox_votes{
     /*display: inline-block;*/
-    width: auto;
+    width: 100px;
     margin: 0 20px 0 10px;
     text-align: center;
 }
@@ -106,7 +106,7 @@ a{
 	background-color: #087f23;
 	padding: 4px;
 	position: relative;
-	left: 34px;
+	left: -12px;
 }
 .linkbox_discuss_button:hover, .linkbox_search_button:hover{
     text-decoration: underline;
