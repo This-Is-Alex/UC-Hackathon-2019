@@ -33,6 +33,12 @@ var URL = "http://127.0.0.1"
     }
   }
 
+function search_headline(id){
+    var headline_span = document.getElementById("headline-"+id)
+    headline = headline_span.innerHTML
+    window.open('http://google.com/search?q='+headline);
+}
+
   function loadDoc() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -162,14 +168,14 @@ var URL = "http://127.0.0.1"
             <div class="linkbox_main">
                 <div class="linkbox_titlebox">
                     <a href="` + url + `">
-                        <span class="linkbox_title">` + heading + `</span><br>
+                        <span class="linkbox_title" id="headline-` + id + `">` + heading + `</span><br>
                         <span class="linkbox_link">` + url + `</span>
                     </a>
                 </div>
                 <img class="linkbox_picture" id="linkbox_picture-`+id+`" src="`+postMiceSrc+(id % numPostMice)`.png">
                 <div class="linkbox_buttons">
                     <a class="linkbox_discuss_button" id="linkbox_discuss_button-` + id + `" onclick="openComments(` + id + ` )" href="#">Discuss (` + numComments + `)</a>
-                    <!-- <a class="linkbox_sources_button">Sources</a> -->
+                    <a class="linkbox_search_button" onclick="search_headline(` + id + `)">Search Headline</a>
                 </div>
                 <div class="linkbox_time">` + age + `</div>
             </div>
