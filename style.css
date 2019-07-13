@@ -1,5 +1,5 @@
 html{
-    background-color: dimgrey;
+    background-color: grey;
     text-align: center;
 }
 a{
@@ -58,9 +58,10 @@ a{
     display: block;
     width: 40px;
     height: 40px;
-    border: solid white;
     margin-top: 0;
     margin-bottom: 0;
+}.linkbox_votes img:hover{
+    cursor: pointer;
 }.linkbox_main{
     display: inline-block;
 }.linkbox_titlebox{
@@ -70,6 +71,10 @@ a{
 }.linkbox_buttons{
     position: absolute;
     bottom: 3px;
+}.linkbox_time{
+    position: absolute;
+    top: 3px;
+    right: 3px;
 }
 
 .linkbox_discuss_button:hover, .linkbox_sources_button:hover{
@@ -103,10 +108,44 @@ a{
 .comment{
     margin: 5px 2px 5px 2px;
     border-top: solid grey 2px;
+    position: relative;
 }.username{
     font-family: sans-serif;
     font-size: 1.1em;
 }.comment_text{
     font-family: sans-serif;
     font-size: 0.9em;
+}.comment_date{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 0.8em;
+}
+
+.comment_entry_container{
+    display: flex;
+    margin: 3px;
+}
+.comment_entry{
+    max-width: 80%;
+    min-width: 80%;
+    border: none;
+    border: solid 1px grey;
+    margin-left: 5px;
+    background: none;
+    outline: none;
+    display: inline-block;
+}.comment_post{
+    display: inline-block;
+    padding: 2px;
+    text-align: center;
+    border: solid 1px red;
+    border-radius: 5px;
+    background-color: rgb(180,100,100);
+    width: 50px;
+    margin: 10px;
+    outline: none;
+}.comment_post:hover{
+    background-color: rgb(150,70,70);
+    cursor: pointer;
 }
