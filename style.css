@@ -24,6 +24,7 @@ a{
 }
 
 .linkbox{
+    position: relative;
     border: solid white;
     display: flex;
     margin-top: 20px;
@@ -32,7 +33,6 @@ a{
 }.linkbox_votes{
     display: inline-block;
     width: auto;
-    height: 100px;
     margin: 0 20px 0 20px;
 }.linkbox_votes img{
     display: block;
@@ -41,10 +41,17 @@ a{
     margin-bottom: 20px;
 }.linkbox_main{
     display: inline-block;
-    height: 100px;
 }.linkbox_titlebox{
     display: block;
+}.linkbox_titlebox a:hover{
+    text-decoration: underline;
 }.linkbox_buttons{
+    position: absolute;
+    bottom: 0;
+}
+
+.linkbox_discuss_button:hover, .linkbox_sources_button:hover{
+    text-decoration: underline;
 }
 
 .linkbox_title{
@@ -53,8 +60,6 @@ a{
 }.linkbox_link{
     font-family: "Lucida Console", monospace;
     font-size: 0.8em;
-}.linkbox_title:hover, .linkbox_link:hover{
-    text-decoration: underline;
 }
 
 .commentsbox{
@@ -73,6 +78,7 @@ a{
 
 .comment{
     margin: 5px 2px 5px 2px;
+    border-top: solid grey 2px;
 }.username{
     font-family: sans-serif;
     font-size: 1.1em;
