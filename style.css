@@ -35,6 +35,7 @@ a{
 }.menu_bar a:hover{
     background-color: rgb(150, 50, 50);
     color: white;
+    cursor: pointer;
 }
 
 #main_content{
@@ -146,6 +147,51 @@ a{
     margin: 10px;
     outline: none;
 }.comment_post:hover{
+    background-color: rgb(150,70,70);
+    cursor: pointer;
+}
+
+#dimmer{
+    display: none;
+    position: fixed;
+    background-color: black;
+    opacity: 0.5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.post_popup{
+    width: 60%;
+    text-align: center;
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 20%;
+    border: white 3px solid;
+    border-radius: 10px;
+    background-color: firebrick;
+    padding: 10px;
+}.close_postpopup_button{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px;
+    outline: none;
+}.close_postpopup_button:hover{
+    cursor: pointer;
+}
+.post_button{
+    margin: 10px;
+    padding: 15px;
+    font-size: 1.2em;
+    text-align: center;
+    border: solid 1px red;
+    border-radius: 5px;
+    background-color: rgb(180,100,100);
+    outline: none;
+}.post_button:hover{
     background-color: rgb(150,70,70);
     cursor: pointer;
 }
