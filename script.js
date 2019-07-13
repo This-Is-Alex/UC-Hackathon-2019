@@ -152,9 +152,9 @@
     document.getElementById("posts").innerHTML += `<div id='linkbox-` + id + `' class="linkbox">
             <div id='linkbox_votes-` + id + `' class="linkbox_votes">
                 <span id="upvoteLabel-` + id + `">` + upvotes + `</span>
-                <a href="#"><img src="` + upvoteSrc + `" onclick="upvote(` + id + `)" title="Legit" id="upvoteButton-` + id + `"></a>
+                <img src="` + upvoteSrc + `" onclick="upvote(` + id + `)" title="Legit" id="upvoteButton-` + id + `">
                 <span id="totalLabel-` + id + `">` + (Number(upvotes) - Number(downvotes)).toString() + `</span>
-                <a href="#"><img src="` + downvoteSrc + `" onclick="downvote(` + id + `)" title="Smells like bullcrap" id="downvoteButton-` + id + `"></a>
+                <img src="` + downvoteSrc + `" onclick="downvote(` + id + `)" title="Smells like bullcrap" id="downvoteButton-` + id + `">
                   <span id="downvoteLabel-` + id + `">` + downvotes + `</span>
             </div>
             <div class="linkbox_main">
