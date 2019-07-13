@@ -22,7 +22,7 @@ public class ShowComments extends Page {
 		for (Post post : Database.getAllPosts()) {
 			if (post.id == postId) {
 				JSONArray arr = new JSONArray();
-				Collections.sort(post.comments);
+				Collections.sort(post.comments, Collections.reverseOrder());
 				for (Comment comment : post.comments) {
 					JSONObject ob = new JSONObject();
 					long age = System.currentTimeMillis() - comment.getTime();
