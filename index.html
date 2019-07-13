@@ -3,11 +3,11 @@
 <head>
     <title>Hackathon 2019</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-     <script src="comment_toggle.js"></script> 
+     <script src="script.js"></script> 
 </head>
 <body>
     <div class="topbox">
-        <a href="index.html"><h1>Skeptic Board</h1></a>
+        <a href="index.html"><img alt="Sceptic Board" src="images/Title.PNG"></a>
     </div>
     
     <div class="menu_bar">
@@ -15,47 +15,7 @@
     </div>
     
     <div id="main_content">
-        <div class="linkbox">
-            <div class="linkbox_votes">
-                999
-                <a href="#"><img src="" title=""></a>
-                1998
-                <a href="#"><img src="" title=""></a>
-                999
-            </div>
-            <div class="linkbox_main">
-                <div class="linkbox_titlebox">
-                    <a href="http://placeholderlink.com">
-                        <span class="linkbox_title">Placeholder Title</span><br>
-                        <span class="linkbox_link">placeholderlink.com</span>
-                    </a>
-                </div>
-                <div class="linkbox_buttons">
-                    <a class="linkbox_discuss_button" onclick="toggle_comments('comments_0')" href="#">Discuss</a>
-                    <!-- <a class="linkbox_sources_button">Sources</a> -->
-                </div>
-            </div>
-        </div>
-
-        <div class="commentsbox" id="comments_0">
-            <div class="commentsbox_header">Comments</div>
-            <div class="comments_container">
-                <div class="comment">
-                    <span class="username">Sample Username</span><br>
-                    <span class="comment_text">Sample comment asdf;oawejf;oiasjd;foajsd;ofjiaw;oe</span>
-                </div>
-
-                <div class="comment">
-                    <span class="username">Sample Username</span><br>
-                    <span class="comment_text">Sample comment asdf;oawejf;oiasjd;foajsd;ofjiaw;oe</span>
-                </div>
-
-                <div class="comment">
-                    <span class="username">Sample Username</span><br>
-                    <span class="comment_text">Sample comment asdf;oawejf;oiasjd;foajsd;ofjiaw;oe</span>
-                </div>
-            </div>
-        </div>
+        <div id="posts"></div>
     </div>
     
 </body>
