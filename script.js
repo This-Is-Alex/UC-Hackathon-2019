@@ -55,7 +55,7 @@ function toggle_post_popup() {
 
   }
 
-  function upvote(id) {
+   function upvote(id) {
     var newCount;
     if (voteMap[id] == 0) {
       voteMap[id] = 1;
@@ -205,6 +205,14 @@ function toggle_post_popup() {
       if (this.readyState == 4 && this.status == 200) {
 
         var data = JSON.parse(this.responseText);
+        document.getElementById("comments_container-" + id).innerHTML =
+            `<div class="comments_container" id="comments_container-` + id + `">
+              <div class="commentsbox_header">Comments</div>
+              <div class="comment_entry_container">
+                   <textarea placeholder="Join the discussion!" id="comment_entry_` + id + `" class="comment_entry"></textarea>
+                   <button class="comment_post" onclick="addComment(` + id + `)" id="comment_post_0">Post</button>
+               </div>
+              </div>`
         var i;
         for (i = 0; i < data.numComments; i++) {
           var cinfo = data.comments[i];
@@ -219,6 +227,7 @@ function toggle_post_popup() {
 
   function loadComment(commentId, postId, age, text) {
 
+
     document.getElementById("comments_container-" + postId).innerHTML += `
 
       <div class="comment" id="comment-` + commentId + `">
@@ -232,9 +241,11 @@ function toggle_post_popup() {
   }
 
   function addComment(id) {
+
+    var text = document.getElementById('comment_entry_'+id).value;
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", URL + "/makeComments", true);
-    xhttp.send(id);
+    xhttp.send(id+"~~~"+text);
   }
 
   loadDoc();
