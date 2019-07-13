@@ -245,14 +245,16 @@ function search_headline(id){
   }
 
   function addComment(id) {
-    openComments(id);
-    toggle_comments(id);
+    /*toggle_comments(id);*/
     var text = document.getElementById('comment_entry_' + id).value;
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", URL + "/makeComment", true);
     xhttp.send(id + "~~~" + text);
     document.getElementById('comment_entry_' + id).value = "";
-
+	
+	document.getElementById("posts").innerHTML = "";
+	loadDoc();
+    setTimeout(function() {openComments(id);}, 50);
   }
 
   function addPost() {
