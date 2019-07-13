@@ -151,11 +151,11 @@
   function loadPost(id, heading, url, upvotes, downvotes, numComments, numSources, age, votestatus) {
     document.getElementById("posts").innerHTML += `<div id='linkbox-` + id + `' class="linkbox">
             <div id='linkbox_votes-` + id + `' class="linkbox_votes">
-                <span id="upvoteLabel-` + id + `">` + upvotes + `</span>
                 <img src="` + upvoteSrc + `" onclick="upvote(` + id + `)" title="Legit" id="upvoteButton-` + id + `">
-                <span id="totalLabel-` + id + `">` + (Number(upvotes) - Number(downvotes)).toString() + `</span>
+				<span id="upvoteLabel-` + id + `">` + upvotes + `</span><br>
+                <span id="totalLabel-` + id + `">` + (Number(upvotes) - Number(downvotes)).toString() + `</span><br>
                 <img src="` + downvoteSrc + `" onclick="downvote(` + id + `)" title="Smells like bullcrap" id="downvoteButton-` + id + `">
-                  <span id="downvoteLabel-` + id + `">` + downvotes + `</span>
+                <span id="downvoteLabel-` + id + `">` + downvotes + `</span>
             </div>
             <div class="linkbox_main">
                 <div class="linkbox_titlebox">
