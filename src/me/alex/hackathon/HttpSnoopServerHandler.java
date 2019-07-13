@@ -32,6 +32,7 @@ import io.netty.handler.codec.http.cookie.ServerCookieEncoder;
 import io.netty.util.CharsetUtil;
 import me.alex.hackathon.database.Database;
 import me.alex.hackathon.pages.AddComment;
+import me.alex.hackathon.pages.AddPost;
 import me.alex.hackathon.pages.Page;
 import me.alex.hackathon.pages.ShowComments;
 import me.alex.hackathon.pages.TopPosts;
@@ -52,6 +53,7 @@ public class HttpSnoopServerHandler extends SimpleChannelInboundHandler<Object> 
 		pages.add(new Vote());
 		pages.add(new ShowComments());
 		pages.add(new AddComment());
+		pages.add(new AddPost());
 	}
 	
 	public HttpSnoopServerHandler() {

@@ -36,6 +36,7 @@ public class ShowComments extends Page {
 					} else {
 						ageStr = (age / 86400000) + " days ago";
 					}
+					ob.put("commentId", comment.getTime());
 					ob.put("age", ageStr);
 					ob.put("text", comment.getContent());
 					arr.add(ob);
@@ -43,6 +44,7 @@ public class ShowComments extends Page {
 				JSONObject returning = new JSONObject();
 				returning.put("numComments", arr.size());
 				returning.put("comments", arr);
+				returning.put("postId", postId);
 				return returning.toJSONString();
 			}
 		}
