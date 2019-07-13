@@ -1,4 +1,4 @@
-  var URL = "http://192.168.1.167"
+  var URL = "http://127.0.0.1"
 
   var voteMap = {};
 
@@ -165,7 +165,7 @@
                     </a>
                 </div>
                 <div class="linkbox_buttons">
-                    <a class="linkbox_discuss_button" id="linkbox_discuss_button-` + id + `" onclick="openComments(` + id + ` )" href="#">Discuss</a>
+                    <a class="linkbox_discuss_button" id="linkbox_discuss_button-` + id + `" onclick="openComments(` + id + ` )" href="#">Discuss (` + numComments + `)</a>
                     <!-- <a class="linkbox_sources_button">Sources</a> -->
                 </div>
                 <div class="linkbox_time">` + age + `</div>
