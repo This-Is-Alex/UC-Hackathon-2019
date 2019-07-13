@@ -150,33 +150,31 @@
             </div>
             <div class="linkbox_main">
                 <div class="linkbox_titlebox">
-                    <a href="` + url + `">
-                        <span class="linkbox_title">` + heading + `</span><br>
-                        <span class="linkbox_link">` + url + `</span>
+                    <a href="`+url+`">
+                        <span class="linkbox_title">`+heading+`</span><br>
+                        <span class="linkbox_link">`+url+`</span>
                     </a>
                 </div>
                 <div class="linkbox_buttons">
-                    <a class="linkbox_discuss_button" id="linkbox_discuss_button-` + id + `" onclick="toggle_comments(` + id + `)" href="#">Discuss</a>
+                    <a class="linkbox_discuss_button" id="linkbox_discuss_button-`+id+`" onclick="toggle_comments(`+id+`)" href="#">Discuss</a>
                     <!-- <a class="linkbox_sources_button">Sources</a> -->
                 </div>
+                <div class="linkbox_time">`+'SAMMY BOI AGE HERE'+`</div>
             </div>
         </div>
 
-        <div class="commentsbox" id="comments-` + id + `">
+        <div class="commentsbox" id="comments-`+id+`">
                    <div class="commentsbox_header">Comments</div>
+                   <div class="comment_entry_container">
+                        <textarea placeholder="Join the discussion!" id="comment_entry_0" class="comment_entry"></textarea>
+                        <button class="comment_post" onclick="SAMMY BOI COMMENT BUTTON HERE" id="comment_post_0">Post</button>
+                    </div>
                    <div class="comments_container">
                        <div class="comment">
                            <span class="username">Sample Username</span><br>
-                           <span class="comment_text">Sample comment asdf;oawejf;oiasjd;foajsd;ofjiaw;oe</span>
-                       </div>
-
-                       <div class="comment">
-                           <span class="username">Sample Username</span><br>
-                           <span class="comment_text">Sample comment asdf;oawejf;oiasjd;foajsd;ofjiaw;oe</span>
-                       </div>
-
-                       <div class="comment">
-                           <span class="username">Sample Username</span><br>
+                           <div class="comment_date">
+                                SAMMY BOI COMMENT AGE HERE
+                            </div>
                            <span class="comment_text">Sample comment asdf;oawejf;oiasjd;foajsd;ofjiaw;oe</span>
                        </div>
                    </div>
