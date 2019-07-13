@@ -172,7 +172,7 @@ function search_headline(id){
                         <span class="linkbox_link">` + url + `</span>
                     </a>
                 </div>
-                <img class="linkbox_picture" id="linkbox_picture-`+id+`" src="`+postMiceSrc+(id % numPostMice)`.png">
+                <img class="linkbox_picture" id="linkbox_picture-`+id+`" src="`+postMiceSrc+(id % numPostMice)+`.png">
                 <div class="linkbox_buttons">
                     <a class="linkbox_discuss_button" id="linkbox_discuss_button-` + id + `" onclick="openComments(` + id + ` )" href="#">Discuss (` + numComments + `)</a>
                     <a class="linkbox_search_button" onclick="search_headline(` + id + `)">Search Headline</a>
