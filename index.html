@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="topbox">
-        <a href="index.html"><img alt="Sceptic Board" src="images/Title.PNG"></a>
+        <a href="index.html"><img alt="Sceptic Board" src="Title.PNG"></a>
     </div>
     
     <div class="menu_bar">
@@ -23,8 +23,13 @@
     <div id="dimmer"></div>
     <div class="post_popup" id="post_popup">
         <h1>Post a New Link</h1>
-        <h2>Headline: </h2><input type="text" id="headline-input">
-        <h2>URL: </h2><input type="url" id="url-input"><br>
+		<center><table>
+		<tr>
+			<td>Headline: </td><td><input type="text" id="headline-input"></td>
+		</tr>
+		<tr>
+			<td>URL: </td><td><input type="url" id="url-input"></td>
+		</tr></table></center>
         <button class="post_button" id="post-button" onclick="addPost()" >Post</button>
         <button class="close_postpopup_button" onclick="toggle_post_popup()">Close</button>
     </div>
