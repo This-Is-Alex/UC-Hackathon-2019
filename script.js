@@ -7,7 +7,7 @@ var URL = "http://127.0.0.1"
   var activeUpvoteSrc = "upvote_clicked.png";
   var activeDownvoteSrc = "downvote_clicked.png";
   var postMiceSrc = "Mascot_";
-  var numPostMice = 4;
+  var numPostMice = 7;
 
   function toggle_comments(box_id) {
     var x = document.getElementById("comments-" + box_id);
@@ -172,7 +172,7 @@ function search_headline(id){
                         <span class="linkbox_link">` + url + `</span>
                     </a>
                 </div>
-                <img class="linkbox_picture" id="linkbox_picture-`+id+`" src="`+postMiceSrc+(id % numPostMice)+`.png">
+                <img class="linkbox_picture" id="linkbox_picture-`+id+`" src="`+postMiceSrc+(1 + (id % numPostMice))+`.png">
                 <div class="linkbox_buttons">
                     <a class="linkbox_discuss_button" id="linkbox_discuss_button-` + id + `" onclick="openComments(` + id + ` )" href="#">Discuss (` + numComments + `)</a>
                     <a class="linkbox_search_button" onclick="search_headline(` + id + `)">Search Headline</a>
@@ -180,7 +180,6 @@ function search_headline(id){
                 <div class="linkbox_time">` + age + `</div>
             </div>
         </div>
-
         <div class="commentsbox" id="comments-` + id + `">
           <div class="comments_container" id="comments_container-` + id + `">
             <div class="commentsbox_header">Comments</div>
@@ -190,8 +189,6 @@ function search_headline(id){
              </div>
             </div>
            </div>
-
-
   `;
 
 
@@ -238,13 +235,11 @@ function search_headline(id){
 
 
     document.getElementById("comments_container-" + postId).innerHTML += `
-
       <div class="comment" id="comment-` + commentId + `">
           <div class="comment_date" id="comment_date-` + commentId + `"> ` + age + `
            </div>
           <span class="comment_text" id='comment_text-` + commentId + `'>` + text + `</span>
       </div>
-
   `
 
   }
