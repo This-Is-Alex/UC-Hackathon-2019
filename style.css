@@ -11,11 +11,30 @@ a{
     display: block;
     text-align: center;
     border-bottom: ridge;
+    position: relative;
 }.topbox h1{
     font-size: 32;
     color: azure;
 }.topbox a{
     text-decoration: none;
+}#submit_button{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;;
+}
+
+.menu_bar{
+    width: 100%;
+    text-align: center;
+    background-color: firebrick;
+}.menu_bar a{
+    display: inline-block;
+    width: 80px;
+}.menu_bar a:hover{
+    background-color: rgb(150, 50, 50);
+    color: white;
 }
 
 #main_content{
@@ -34,11 +53,14 @@ a{
     display: inline-block;
     width: auto;
     margin: 0 20px 0 20px;
+    text-align: center;
 }.linkbox_votes img{
     display: block;
-    width: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    width: 40px;
+    height: 40px;
+    border: solid white;
+    margin-top: 0;
+    margin-bottom: 0;
 }.linkbox_main{
     display: inline-block;
 }.linkbox_titlebox{
@@ -47,7 +69,7 @@ a{
     text-decoration: underline;
 }.linkbox_buttons{
     position: absolute;
-    bottom: 0;
+    bottom: 3px;
 }
 
 .linkbox_discuss_button:hover, .linkbox_sources_button:hover{
@@ -64,12 +86,14 @@ a{
 
 .commentsbox{
     border: solid white;
-    display: inline-block;
+    display: none;
     margin-top: 0;
     width: 80%;
+    max-height: 500px;
     background-color: firebrick;
     text-align: left;
     border-top: none;
+    overflow-y: scroll;
 }.commentsbox_header{
     text-align: center;
     font-family: serif;
