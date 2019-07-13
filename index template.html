@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <title>Hackathon 2019</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+     <script src="script.js"></script> 
+</head>
+<body>
+    <div class="topbox">
+        <a href="index.html"><img alt="Sceptic Board" src="images/Title.PNG"></a>
+    </div>
+    
+    <div class="menu_bar">
+        <a class="submit_menu_button" onclick="toggle_post_popup()">Submit Link</a>
+    </div>
+    
+    <div id="main_content">
+        <div class="linkbox">
+            <div class="linkbox_votes">
+                <span>999</span>
+                <img src="upvote.PNG">
+                <span>1998</span>
+                <img src="downvote.PNG">
+                <span>999</span>
+            </div>
+            <div class="linkbox_main">
+                <div class="linkbox_titlebox">
+                    <a href="http://example.com">
+                        <span class="linkbox_title">Placeholder Title</span><br>
+                        <span class="linkbox_link">example.com</span>
+                    </a>
+                </div>
+                <div class="linkbox_buttons">
+                    <a class="linkbox_discuss_button" onclick="toggle_comments('0')" href="#">Discuss</a>
+                    <!-- <a class="linkbox_sources_button">Sources</a> -->
+                </div>
+                
+                <div class="linkbox_time">Posted at the dawn of time</div>
+            </div>
+        </div>
+
+        <div class="commentsbox" id="comments-0">
+            <div class="commentsbox_header">Comments</div>
+            <div class="comment_entry_container">
+                <textarea placeholder="Join the discussion!" id="comment_entry_0" class="comment_entry"></textarea>
+                <button class="comment_post" onclick="Do your stuff Sam" id="comment_post_0">Post</button>
+            </div>
+            <div class="comments_container">
+                <div class="comment">
+                    <span class="username">Sample Username</span><br>
+                    <div class="comment_date">
+                    Since the dawn of time minus an hour
+                    </div>
+                    <span class="comment_text">Sample comment asdf;oawejf;oiasjd;foajsd;ofjiaw;oe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlays -->
+    <div id="dimmer"></div>
+    <div class="post_popup" id="post_popup">
+        <h1>Post a New Link</h1>
+        <h2>Headline: </h2><input type="text" id="headline-input-0">
+        <h2>URL: </h2><input type="url" id="url-input-0"><br>
+        <button class="post_button" id="post-button-0">Post</button>
+        <button class="close_postpopup_button" onclick="toggle_post_popup()">Close</button>
+    </div>
+    
+</body>
+</html>
