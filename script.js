@@ -1,25 +1,25 @@
   var URL = "http://192.168.1.167"
 
-    var voteMap = {};
+  var voteMap = {};
 
-    var upvoteSrc = "upvote.png";
-    var downvoteSrc = "downvote.png";
-    var activeUpvoteSrc = "upvote_clicked.png";
-    var activeDownvoteSrc = "downvote_clicked.png";
+  var upvoteSrc = "upvote.png";
+  var downvoteSrc = "downvote.png";
+  var activeUpvoteSrc = "upvote_clicked.png";
+  var activeDownvoteSrc = "downvote_clicked.png";
 
-    function toggle_comments(box_id) {
-      var x = document.getElementById("comments-" + box_id);
-      if (x.style.display === "none") {
-        x.style.display = "inline-block";
-      } else {
-        x.style.display = "none";
-      }
+  function toggle_comments(box_id) {
+    var x = document.getElementById("comments-" + box_id);
+    if (x.style.display === "none") {
+      x.style.display = "inline-block";
+    } else {
+      x.style.display = "none";
     }
+  }
 
   function toggle_post_popup() {
     var x = document.getElementById("dimmer");
-      var y = document.getElementById("post_popup")
-      console.log("dimmer display is:" + String(x.style.display))
+    var y = document.getElementById("post_popup")
+    console.log("dimmer display is:" + String(x.style.display))
     if (x.style.display === "none" || x.style.display == "") {
       console.log("Making Visible")
       x.style.display = "block";
@@ -31,29 +31,29 @@
     }
   }
 
-    function loadDoc() {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
 
-          var data = JSON.parse(this.responseText);
-          var i;
-          for (i = 0; i < data.numPosts; i++) {
-            var pinfo = data.posts[i];
-            loadPost(pinfo.id, pinfo.title, pinfo.url, pinfo.upvotes, pinfo.downvotes, pinfo.numComments, pinfo.numSources, pinfo.age, pinfo.voteStatus);
-            voteMap[pinfo.id] = pinfo.voteStatus;
-          }
-        };
-      }
-      xhttp.open("GET", URL + "/topPosts", true);
-      xhttp.send();
-
+        var data = JSON.parse(this.responseText);
+        var i;
+        for (i = 0; i < data.numPosts; i++) {
+          var pinfo = data.posts[i];
+          loadPost(pinfo.id, pinfo.title, pinfo.url, pinfo.upvotes, pinfo.downvotes, pinfo.numComments, pinfo.numSources, pinfo.age, pinfo.voteStatus);
+          voteMap[pinfo.id] = pinfo.voteStatus;
+        }
+      };
     }
+    xhttp.open("GET", URL + "/topPosts", true);
+    xhttp.send();
 
-    function updateVoteDiff(id) {
-      document.getElementById("totalLabel-" + id).innerHTML = (Number(document.getElementById("upvoteLabel-" + id).innerHTML) - Number(document.getElementById("downvoteLabel-" + id).innerHTML)).toString();
+  }
 
-    }
+  function updateVoteDiff(id) {
+    document.getElementById("totalLabel-" + id).innerHTML = (Number(document.getElementById("upvoteLabel-" + id).innerHTML) - Number(document.getElementById("downvoteLabel-" + id).innerHTML)).toString();
+
+  }
 
   function upvote(id) {
     var newCount;
@@ -206,7 +206,7 @@
 
         var data = JSON.parse(this.responseText);
         document.getElementById("comments_container-" + id).innerHTML =
-            `<div class="comments_container" id="comments_container-` + id + `">
+          `<div class="comments_container" id="comments_container-` + id + `">
               <div class="commentsbox_header">Comments</div>
               <div class="comment_entry_container">
                    <textarea placeholder="Join the discussion!" id="comment_entry_` + id + `" class="comment_entry"></textarea>
@@ -243,33 +243,30 @@
   function addComment(id) {
     openComments(id);
     toggle_comments(id);
-    var text = document.getElementById('comment_entry_'+id).value;
+    var text = document.getElementById('comment_entry_' + id).value;
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", URL + "/makeComment", true);
-    xhttp.send(id+"~~~"+text);
-    document.getElementById('comment_entry_'+id).value = "";
+    xhttp.send(id + "~~~" + text);
+    document.getElementById('comment_entry_' + id).value = "";
 
   }
 
-  function addPost(){
+  function addPost() {
     var headline = document.getElementById("headline-input").value;
     var url = document.getElementById("url-input").value;
 
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", URL + "/createPost", true);
-    xhttp.send(url+"~~~"+headline);
+    xhttp.send(url + "~~~" + headline);
 
     document.getElementById("headline-input").value = "";
     document.getElementById("url-input").value = "";
     toggle_post_popup();
+
+    document.getElementById("posts").innerHTML = "";
     loadDoc();
 
-
-
-
   }
-
-
 
 
   loadDoc();
