@@ -241,7 +241,8 @@
   }
 
   function addComment(id) {
-
+    openComments(id);
+    toggle_comments(id);
     var text = document.getElementById('comment_entry_'+id).value;
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", URL + "/makeComment", true);
@@ -249,5 +250,26 @@
     document.getElementById('comment_entry_'+id).value = "";
 
   }
+
+  function addPost(){
+    var headline = document.getElementById("headline-input").value;
+    var url = document.getElementById("url-input").value;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", URL + "/createPost", true);
+    xhttp.send(url+"~~~"+headline);
+
+    document.getElementById("headline-input").value = "";
+    document.getElementById("url-input").value = "";
+    toggle_post_popup();
+    loadDoc();
+
+
+
+
+  }
+
+
+
 
   loadDoc();
