@@ -2,10 +2,10 @@
 
   var voteMap = {};
 
-  var upvoteSrc = "images/Legit.png";
-  var downvoteSrc = "images/bull.png";
-  var activeUpvoteSrc = "";
-  var activeDownvoteSrc = "";
+  var upvoteSrc = "upvote.png";
+  var downvoteSrc = "downvote.png";
+  var activeUpvoteSrc = "upvote_clicked.png";
+  var activeDownvoteSrc = "downvote_clicked.png";
 
   function toggle_comments(box_id) {
     var x = document.getElementById("comments-" + box_id);
@@ -15,6 +15,21 @@
       x.style.display = "none";
     }
   }
+
+function toggle_post_popup() {
+  var x = document.getElementById("dimmer");
+    var y = document.getElementById("post_popup")
+    console.log("dimmer display is:" + String(x.style.display))
+  if (x.style.display === "none" || x.style.display == "") {
+    console.log("Making Visible")
+    x.style.display = "block";
+    y.style.display = "block";   
+  } else {
+    console.log("Making Invisible, dimmer not display=none")
+    x.style.display = "none";
+    y.style.display = "none";
+  }
+}
 
   function loadDoc() {
     var xhttp = new XMLHttpRequest();
