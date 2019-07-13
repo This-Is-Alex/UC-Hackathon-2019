@@ -51,9 +51,7 @@ public class Post implements Comparable<Post> {
 	public int getScore() {
 		long postAge = System.currentTimeMillis() - createTime;
 		int postAgePerUnit = 1 + (int) (postAge / 3600000); //3600000ms in an hour
-		System.out.println(title + " is "+postAgePerUnit+"-1 hours old");
 		int popularity = 20 * (numUpvotes + numDownvotes);
-		System.out.println(popularity / postAgePerUnit);
 		return popularity / postAgePerUnit;
 	}
 	

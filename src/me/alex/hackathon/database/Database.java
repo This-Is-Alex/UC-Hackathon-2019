@@ -17,7 +17,7 @@ public class Database {
 	private static List<Post> posts = new ArrayList<Post>();
 	
 	public static List<Post> getAllPosts(){
-		Collections.sort(posts, Collections.reverseOrder());
+		Collections.sort(posts);
 		return posts;
 	}
 	
